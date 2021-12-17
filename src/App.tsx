@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Section from "./Section";
+import Grid from "@material-ui/core/Grid";
+import emoji from "emoji-dictionary";
 
 function App() {
+  const cakeEmoji = emoji.getUnicode("birthday");
+  const nutEmoji = emoji.getUnicode("peanuts");
+  const trainEmoji = emoji.getUnicode("train");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Section>
+        <h1>
+          Meet the <s>founders</s> shrimp
+        </h1>
+      </Section>
+      <Section>
+        <h1>
+          {cakeEmoji}
+          cake
+          {cakeEmoji}
+        </h1>
+        <h1>
+          {nutEmoji}2nuts{nutEmoji}
+        </h1>
+        <h1>
+          {trainEmoji}boos{trainEmoji}
+        </h1>
+      </Section>
+    </Grid>
   );
 }
 
