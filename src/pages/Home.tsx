@@ -111,7 +111,6 @@ function Home() {
             direction="column"
             justifyContent="center"
             alignItems="center"
-            xs={8}
           >
             <p>
               Here at 6krill, we want your credit card informations and we will

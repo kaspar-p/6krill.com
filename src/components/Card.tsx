@@ -19,15 +19,21 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: "20px",
     boxShadow: `${theme.palette.primary.dark} 5px 5px`,
     backgroundColor: theme.palette.primary.main,
-    borderRadius: "8px",
+    borderRadius: "15px",
   },
   founderSectionWrapper: ({ alignLeft }: { alignLeft: boolean }) => ({
     [alignLeft
       ? "borderRight"
       : "borderLeft"]: `2px solid ${theme.palette.primary.light}`,
     [alignLeft ? "marginRight" : "marginLeft"]: "10px",
-    padding: "10px",
+    paddingLeft: alignLeft ? "0" : "20px",
   }),
+  founderName: {
+    color: theme.palette.primary.light,
+  },
+  textTitle: {
+    color: theme.palette.primary.light,
+  },
 }));
 
 function Card(props: CardPropsType) {
@@ -41,14 +47,14 @@ function Card(props: CardPropsType) {
       xs={4}
       className={classes.founderSectionWrapper}
     >
-      <h2>{founder.name}</h2>
+      <h2 className={classes.founderName}>{founder.name}</h2>
       <div>{founder.blurb}</div>
     </Grid>
   );
 
   const textSection = (
-    <Grid xs={7} direction="column" style={{ paddingBottom: "20px" }}>
-      <h2>{title}</h2>
+    <Grid xs={7} direction="column">
+      <h2 className={classes.textTitle}>{title}</h2>
       {children}
     </Grid>
   );
