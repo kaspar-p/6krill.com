@@ -7,6 +7,13 @@ interface Founder {
   blurb: string;
 }
 
+interface CardPropsType {
+  alignLeft: boolean;
+  founder: Founder;
+  title: string;
+  children: React.ReactNode | React.ReactNode[];
+}
+
 const useStyles = makeStyles((theme: Theme) => ({
   card: {
     padding: "20px",
@@ -14,33 +21,25 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.primary.main,
     borderRadius: "8px",
   },
+  founderSectionWrapper: ({ alignLeft }: { alignLeft: boolean }) => ({
+    [alignLeft
+      ? "borderRight"
+      : "borderLeft"]: `2px solid ${theme.palette.primary.light}`,
+    [alignLeft ? "marginRight" : "marginLeft"]: "10px",
+    padding: "10px",
+  }),
 }));
 
-function Card({
-  alignLeft,
-  founder,
-  title,
-  children,
-}: {
-  alignLeft: boolean;
-  founder: Founder;
-  title: string;
-  children: React.ReactNode | React.ReactNode[];
-}) {
-  const classes = useStyles();
-  const whichBorder = alignLeft ? "borderRight" : "borderLeft";
-  const whichMargin = alignLeft ? "marginRight" : "marginLeft";
+function Card(props: CardPropsType) {
+  const { alignLeft, founder, title, children } = props;
+  const classes = useStyles(props);
 
   const founderSection = (
     <Grid
       container
       direction="column"
       xs={4}
-      style={{
-        [whichBorder]: "2px solid gray",
-        [whichMargin]: "10px",
-        padding: "10px",
-      }}
+      className={classes.founderSectionWrapper}
     >
       <h2>{founder.name}</h2>
       <div>{founder.blurb}</div>
