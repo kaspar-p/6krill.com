@@ -33,7 +33,7 @@ const founders = {
   },
   "2nuts": {
     name: `${nutEmoji}2nuts${nutEmoji}`,
-    blurb: "something else",
+    blurb: "Ain't shit get past me. ",
   },
   boos: {
     name: `${trainEmoji}boos${trainEmoji}`,
