@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.secondary.light,
   },
   titleText: {
+    fontSize: "2.75rem",
+    color: theme.palette.primary.main,
+  },
+  founderText: {
     color: theme.palette.primary.main,
   },
   creditCardButton: {
@@ -29,20 +33,24 @@ const trainEmoji = emoji.getUnicode("train");
 const founders = {
   cake: {
     name: `${cakeEmoji}cake${cakeEmoji}`,
-    blurb: "something",
+    blurb: `"let me fish" - Douglas, age 50. cake is big. Like big big. cake is astonishingly massive. At this point, 
+    it's a hygiene issue. Other interests: snorkling and babes. As the worst member 
+    of 6krill, he gets hit. He may not admit it, but he enjoys being hit. little piggie. 
+    Other interests: snorkling. `,
   },
   "2nuts": {
     name: `${nutEmoji}2nuts${nutEmoji}`,
-    blurb: "Ain't shit get past me. ",
+    blurb:
+      "Ain't shit get past me. Other interests: pulling strings and breathing down necks. Ain't shit get past me.",
   },
   boos: {
     name: `${trainEmoji}boos${trainEmoji}`,
-    blurb: `Meet boos. boos is our biggest hitter. As the inventor of the 6krill
+    blurb: `Meet boos. boos is our biggest hitter. Other interests: drinking and hitting. 
+      The interns are his favorite. to hit. As the inventor of the 6krill
       title, boos got ideas. As a Dust II hater, a young producer, and
       gamer on the sticks, boos really stays odd around the hose. boos is
-      valuable to 6krill in his sheer unconformity. boos the type of guy
-      to order a whole plate of french toast and ask for a box at the same
-      time. boos keep it weird.`,
+      valuable to 6krill in his raw, unapologetic conformity. boos likes french toast but 
+      won't eat it all at once. boos keep it weird.`,
   },
   internships: {
     name: "Cash",
@@ -71,6 +79,13 @@ function Home() {
       alignItems="center"
       className={classes.homeWrapper}
     >
+      <Section>
+        <h1 className={classes.titleText}>
+          {emoji.getUnicode("shrimp")}
+          Meet the <s>founders</s> krill
+          {emoji.getUnicode("shrimp")}
+        </h1>
+      </Section>
       <Grid
         container
         direction="column"
@@ -80,16 +95,9 @@ function Home() {
         spacing={spacingSize}
       >
         <Section>
-          <h1 className={classes.titleText}>
-            {emoji.getUnicode("shrimp")}
-            Meet the <s>founders</s> shrimp
-            {emoji.getUnicode("shrimp")}
-          </h1>
-        </Section>
-        <Section>
-          <h1 className={classes.titleText}>{founders.cake.name}</h1>
-          <h1 className={classes.titleText}>{founders["2nuts"].name}</h1>
-          <h1 className={classes.titleText}>{founders.boos.name}</h1>
+          <h2 className={classes.founderText}>{founders.cake.name}</h2>
+          <h2 className={classes.founderText}>{founders["2nuts"].name}</h2>
+          <h2 className={classes.founderText}>{founders.boos.name}</h2>
         </Section>
 
         <Grid item container direction="row" justifyContent="space-around">
@@ -119,7 +127,7 @@ function Home() {
               the planet. Our decentralized cryptosystems and blockchains are
               international, and we share in the needs of our multilingual
               conglomerate allies in standing against global. We also sell used
-              socks. DM me for pricing. Steroids optional.{" "}
+              socks. DM me for pricing. Steroids optional, chemtrails required.
             </p>
           </Card>
           <Card size={smallSize}>
