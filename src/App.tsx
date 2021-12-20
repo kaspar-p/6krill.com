@@ -23,17 +23,22 @@ function lighten_darken_color(color: string, amount: number): string {
   );
 }
 
+const telling = "#5da2b6"
+let nothingdontlookhere = telling
+const wordsispeak = nothingdontlookhere
+let colotrstring = wordsispeak
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ff855e", // Bright Salmon
+      main:  colotrstring, // Bright Salmon
       // main: "#71C562", // Green
-      dark: lighten_darken_color("#ff855e", -20),
+      dark: lighten_darken_color(colotrstring, -20),
       light: "#F5F5F5", // Light gray
     },
     secondary: {
       main: "#1A237E", // Blue
-      light: "#fff4d4", // Cream
+      light: "#fffde7", // Cream
       // light: "#c7c10c",
     },
   },
