@@ -10,8 +10,9 @@ interface Founder {
 const useStyles = makeStyles((theme: Theme) => ({
   card: {
     padding: "20px",
-    boxShadow: "200",
+    boxShadow: "#fefefe 5px 5px",
     backgroundColor: theme.palette.primary.main,
+    borderRadius: "8px",
   },
 }));
 

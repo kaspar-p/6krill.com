@@ -1,9 +1,17 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Grid, Theme } from "@mui/material";
 import emoji from "emoji-dictionary";
 
 import Card from "../components/Card";
 import Section from "../components/Section";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme: Theme) => ({
+  homeWrapper: {
+    padding: "20px",
+    backgroundColor: theme.palette.secondary.light,
+  },
+}));
 
 const founders = {
   cake: {
@@ -30,6 +38,7 @@ const founders = {
 };
 
 function Home() {
+  const classes = useStyles();
   const cakeEmoji = emoji.getUnicode("birthday");
   const nutEmoji = emoji.getUnicode("peanuts");
   const trainEmoji = emoji.getUnicode("train");
@@ -40,9 +49,7 @@ function Home() {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      style={{
-        paddingTop: "20px",
-      }}
+      className={classes.homeWrapper}
     >
       <Grid
         container

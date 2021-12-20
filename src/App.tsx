@@ -6,12 +6,12 @@ import { createTheme, ThemeProvider } from "@mui/system";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#F4511E",
-      light: "#F5F5F5",
+      main: "#ff855e", // Bright Salmon
+      light: "#F5F5F5", // Light gray
     },
     secondary: {
-      main: "#1A237E",
-      light: "#FFE082",
+      main: "#1A237E", // Blue
+      light: "#fff4d4", // Cream
     },
   },
 });
