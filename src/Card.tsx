@@ -1,11 +1,17 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { Paper } from "@material-ui/core";
+import { makeStyles, Paper } from "@material-ui/core";
 
 interface Founder {
   name: string;
   blurb: string;
 }
+
+const useStyles = makeStyles((theme) => ({
+  card: {
+    backgroundColor: "black",
+  },
+}));
 
 function Card({
   alignLeft,
@@ -18,6 +24,7 @@ function Card({
   title: string;
   children: React.ReactNode | React.ReactNode[];
 }) {
+  const classes = useStyles();
   const whichBorder = alignLeft ? "borderRight" : "borderLeft";
   const whichMargin = alignLeft ? "marginRight" : "marginLeft";
 
@@ -45,7 +52,7 @@ function Card({
   );
 
   return (
-    <Paper style={{ padding: "20px" }}>
+    <Paper className={classes.card}>
       <Grid container direction="row">
         {alignLeft ? (
           <React.Fragment>
