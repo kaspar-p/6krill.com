@@ -38,7 +38,7 @@ const trainEmoji = emoji.getUnicode("train");
 const founders = {
   cake: {
     name: `${cakeEmoji}cake${cakeEmoji}`,
-    blurb: `"let me fish" - Douglas, age 50. cake is big. Like big big. cake is astonishingly massive. At this point, 
+    blurb: `cake is big. Like big big. cake is astonishingly massive. At this point, 
     it's a hygiene issue. Other interests: snorkling and babes. As the worst member 
     of 6krill, he gets hit. He may not admit it, but he enjoys being hit. little piggie. 
     Other interests: snorkling. `,
@@ -83,7 +83,7 @@ function Home() {
   const smallSize = 4.65;
   const largeSize = 6.75;
 
-  const spacingSize = 3;
+  const spacingSize = 4;
 
   const cursedString = `I don't know who needs to hear this, but ${
     randGen() + "-" + randGen()
@@ -132,8 +132,7 @@ function Home() {
           item
           container
           direction={contentDirection}
-          justifyContent="space-around"
-          alignItems="space-around"
+          justifyContent="center"
           className={classes.contentRow}
           spacing={spacingSize}
         >
@@ -157,7 +156,7 @@ function Home() {
           container
           direction={contentDirection}
           className={classes.contentRow}
-          justifyContent="space-around"
+          justifyContent="center"
           spacing={spacingSize}
         >
           <Card size={largeSize}>
@@ -183,7 +182,7 @@ function Home() {
           item
           container
           direction={contentDirection}
-          justifyContent="space-around"
+          justifyContent="center"
           className={classes.contentRow}
           spacing={spacingSize}
         >
@@ -242,7 +241,7 @@ function Home() {
           item
           container
           direction={contentDirection}
-          justifyContent="space-around"
+          justifyContent="center"
           className={classes.contentRow}
           spacing={spacingSize}
         >
@@ -269,7 +268,7 @@ function Home() {
           item
           container
           direction={contentDirection}
-          justifyContent="space-around"
+          justifyContent="center"
           className={classes.contentRow}
           spacing={spacingSize}
         >
@@ -319,7 +318,7 @@ function Home() {
           item
           container
           direction={contentDirection}
-          justifyContent="space-around"
+          justifyContent="center"
           className={classes.contentRow}
           spacing={spacingSize}
         >
