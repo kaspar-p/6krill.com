@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Theme } from "@mui/material";
+import { Grid, Theme, useMediaQuery } from "@mui/material";
 import emoji from "emoji-dictionary";
 
 import Card from "../components/Card";
@@ -10,8 +10,8 @@ import SnorkelPic from "../images/images.jpeg";
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeWrapper: {
-    padding: "20px",
     backgroundColor: theme.palette.secondary.light,
+    padding: "5%",
   },
   titleText: {
     fontSize: "2.75rem",
@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     cursor: "pointer",
     borderRadius: "10px",
     border: "1px solid black",
+  },
+  contentRow: {
+    // padding: "2%",
   },
 }));
 
@@ -67,6 +70,11 @@ function randGen() {
 
 function Home() {
   const classes = useStyles();
+  const isLargeScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.up("md")
+  );
+
+  const contentDirection = isLargeScreen ? "row" : "column";
 
   const [creditCardEmoji, setCreditCardEmoji] = useState(
     emoji.getUnicode("neutral_face")
@@ -105,11 +113,13 @@ function Home() {
         </h1>
       </Section>
       <Grid
+        item
         container
         direction="column"
         justifyContent="center"
-        alignItems="center"
-        xs={8}
+        alignContent="center"
+        xs={12}
+        lg={9}
         spacing={spacingSize}
       >
         <Section>
@@ -118,7 +128,15 @@ function Home() {
           <h2 className={classes.founderText}>{founders.boos.name}</h2>
         </Section>
 
-        <Grid item container direction="row" justifyContent="space-around">
+        <Grid
+          item
+          container
+          direction={contentDirection}
+          justifyContent="space-around"
+          alignItems="space-around"
+          className={classes.contentRow}
+          spacing={spacingSize}
+        >
           <Card size={smallSize}>
             <h2>Meet {founders.cake.name}</h2>
             <p>{founders.cake.blurb}</p>
@@ -134,7 +152,14 @@ function Home() {
           </Card>
         </Grid>
 
-        <Grid item container direction="row" justifyContent="space-around">
+        <Grid
+          item
+          container
+          direction={contentDirection}
+          className={classes.contentRow}
+          justifyContent="space-around"
+          spacing={spacingSize}
+        >
           <Card size={largeSize}>
             <h2> How we do it </h2>
             <p>
@@ -154,7 +179,14 @@ function Home() {
           </Card>
         </Grid>
 
-        <Grid item container direction="row" justifyContent="space-around">
+        <Grid
+          item
+          container
+          direction={contentDirection}
+          justifyContent="space-around"
+          className={classes.contentRow}
+          spacing={spacingSize}
+        >
           <Card size={smallSize}>
             <h2>Meet {founders.boos.name}</h2>
             <p>{founders.boos.blurb}</p>
@@ -206,7 +238,14 @@ function Home() {
           </Card>
         </Grid>
 
-        <Grid item container direction="row" justifyContent="space-around">
+        <Grid
+          item
+          container
+          direction={contentDirection}
+          justifyContent="space-around"
+          className={classes.contentRow}
+          spacing={spacingSize}
+        >
           <Card size={largeSize}>
             <h2>{founders.internships.name}</h2>
             <p>{founders.internships.blurb}</p>
@@ -226,7 +265,14 @@ function Home() {
           </Card>
         </Grid>
 
-        <Grid item container direction="row" justifyContent="space-around">
+        <Grid
+          item
+          container
+          direction={contentDirection}
+          justifyContent="space-around"
+          className={classes.contentRow}
+          spacing={spacingSize}
+        >
           <Card size={smallSize}>
             <h2>Findings and hypotheses</h2>
             <ColorFinding color={"#A239CA"} />
@@ -269,9 +315,18 @@ function Home() {
         <br />
         <br />
 
-        <div style={{ fontSize: "1.25rem", fontFamily: "initial" }}>
-          <p>{coloredCursedString}</p>
-        </div>
+        <Grid
+          item
+          container
+          direction={contentDirection}
+          justifyContent="space-around"
+          className={classes.contentRow}
+          spacing={spacingSize}
+        >
+          <div style={{ fontSize: "1.25rem", fontFamily: "initial" }}>
+            <p>{coloredCursedString}</p>
+          </div>
+        </Grid>
       </Grid>
     </Grid>
   );

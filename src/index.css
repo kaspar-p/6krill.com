@@ -1,6 +1,6 @@
 @font-face {
   font-family: "krill";
-  src: local("krill"), url(./images/Quicksand-Regular.ttf) format("truetype");
+  src: local("krill"), url(./fonts/Quicksand-Regular.ttf) format("truetype");
 }
 
 body {

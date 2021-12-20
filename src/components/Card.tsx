@@ -9,14 +9,13 @@ interface CardPropsType {
 
 const useStyles = makeStyles((theme: Theme) => ({
   card: {
-    padding: "20px",
     boxShadow: `${theme.palette.primary.dark} 5px 5px`,
     backgroundColor: theme.palette.primary.main,
     borderRadius: "15px",
+    padding: "5%",
+    height: "100%",
   },
-  founderSectionWrapper: {
-    margin: "10px 0",
-  },
+  founderSectionWrapper: {},
   founderName: {
     color: theme.palette.secondary.light,
   },
@@ -33,14 +32,18 @@ function Card(props: CardPropsType) {
   const classes = useStyles();
 
   return (
-    <Grid
-      item
-      container
-      direction="column"
-      xs={size}
-      className={classes.card + " " + classes.mainText}
-    >
-      {children}
+    <Grid item xs={size}>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+        className={classes.card + " " + classes.mainText}
+      >
+        {children.map((child) => (
+          <Grid item> {child} </Grid>
+        ))}
+      </Grid>
     </Grid>
   );
 }
