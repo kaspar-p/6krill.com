@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Button, Grid, Theme } from "@mui/material";
+import { Grid, Theme } from "@mui/material";
 import emoji from "emoji-dictionary";
 
 import Card from "../components/Card";
 import Section from "../components/Section";
+import ColorFinding from "../components/ColorFinding";
 import { makeStyles } from "@mui/styles";
+import SnorkelPic from "../images/images.jpeg";
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeWrapper: {
@@ -41,7 +43,7 @@ const founders = {
   "2nuts": {
     name: `${nutEmoji}2nuts${nutEmoji}`,
     blurb:
-      "Ain't shit get past me. Other interests: pulling strings and breathing down necks. Ain't shit get past me.",
+      "Ain't shit get past me. Other interests: pulling strings and breathing down necks. ",
   },
   boos: {
     name: `${trainEmoji}boos${trainEmoji}`,
@@ -59,6 +61,10 @@ const founders = {
   },
 };
 
+function randGen() {
+  return Math.floor(Math.random() * 1000000);
+}
+
 function Home() {
   const classes = useStyles();
 
@@ -70,6 +76,18 @@ function Home() {
   const largeSize = 6.75;
 
   const spacingSize = 3;
+
+  const cursedString = `I don't know who needs to hear this, but ${
+    randGen() + "-" + randGen()
+  }. And yes, he was watching you.`;
+
+  const coloredCursedString = cursedString
+    .split("")
+    .map((char) => (
+      <span style={{ color: Math.random() < 0.3 ? "red" : "black" }}>
+        {char}
+      </span>
+    ));
 
   return (
     <Grid
@@ -207,6 +225,53 @@ function Home() {
             <p></p>
           </Card>
         </Grid>
+
+        <Grid item container direction="row" justifyContent="space-around">
+          <Card size={smallSize}>
+            <h2>Findings and hypotheses</h2>
+            <ColorFinding color={"#A239CA"} />
+            <ColorFinding color={"#B54F55"} />
+            <ColorFinding color={"#FC030F"} />
+            <ColorFinding color={"#79A307"} />
+            <ColorFinding color={"#DAED12"} />
+            <ColorFinding color={"#133769"} />
+            <p>
+              I personally believe that snorkels could be way longer. I'm talkin
+              10, 20, 50 feet in length. A couple in girth. If I don't feel like
+              I'm drinking ocean boba, it ain't snorkeling. Please make it
+              happen. Try it with PVC pipe?
+            </p>
+            <img src={SnorkelPic} width="50" height="50" />
+          </Card>
+          <Card size={largeSize}>
+            <h2> Quotes to live by </h2>
+            <p>"I be starin at shrimps" - cake, on why he snorkels</p>
+            <p>"Ain't shit get past me." - 2nuts, constantly</p>
+            <p>
+              "Could I get a plate of french toast. But you know, just to nibble
+              on? Just to take a couple bites? I just wanna taste it. Can I get
+              a box with that also? I know its weird to ask but I just know I'm
+              not going to finish these. They really are just for nibbling. I
+              like french toast. Don't tell me I don't. I really do. It's just
+              I'm not all that hungry. To be honest, my appetite was ruined
+              earlier today. I saw this intern hit cake. Awesome. " - boos, at
+              breakfast time
+            </p>
+          </Card>
+        </Grid>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div style={{ fontSize: "1.25rem", fontFamily: "initial" }}>
+          <p>{coloredCursedString}</p>
+        </div>
       </Grid>
     </Grid>
   );
