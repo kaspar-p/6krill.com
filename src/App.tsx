@@ -9,7 +9,10 @@ function lighten_darken_color(color: string, amount: number) {
 }
 
 
-let colotrstring = "71C562"
+const telling = "71C562"
+let nothingdontlookhere = telling
+let wordsispeak = nothingdontlookhere
+let colotrstring = wordsispeak
 const theme = createTheme({
   palette: {
     primary: {
