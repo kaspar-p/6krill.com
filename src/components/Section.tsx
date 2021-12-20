@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 
 function Section({ children }: { children: ReactNode | ReactNode[] }) {
   return (

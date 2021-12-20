@@ -1,15 +1,17 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles, Paper } from "@material-ui/core";
+import { Grid, Theme } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 interface Founder {
   name: string;
   blurb: string;
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   card: {
-    backgroundColor: "#73956f",
+    padding: "20px",
+    boxShadow: "200",
+    backgroundColor: theme.palette.primary.main,
   },
 }));
 
@@ -52,19 +54,19 @@ function Card({
   );
 
   return (
-    <Paper className={classes.card}>
+    <div className={classes.card}>
       <Grid container direction="row">
         {alignLeft ? (
-          <React.Fragment>
+          <>
             {founderSection} {textSection}
-          </React.Fragment>
+          </>
         ) : (
-          <React.Fragment>
+          <>
             {textSection} {founderSection}
-          </React.Fragment>
+          </>
         )}
       </Grid>
-    </Paper>
+    </div>
   );
 }
 
