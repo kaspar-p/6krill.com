@@ -1,17 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Grid, Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-interface Founder {
-  name: string;
-  blurb: string;
-}
-
 interface CardPropsType {
-  alignLeft: boolean;
-  founder: Founder;
-  title: string;
-  children: React.ReactNode | React.ReactNode[];
+  size: number;
+  children: ReactNode[];
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -21,58 +14,34 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.primary.main,
     borderRadius: "15px",
   },
-  founderSectionWrapper: ({ alignLeft }: { alignLeft: boolean }) => ({
-    [alignLeft
-      ? "borderRight"
-      : "borderLeft"]: `2px solid ${theme.palette.primary.light}`,
-    [alignLeft ? "marginRight" : "marginLeft"]: "10px",
-    paddingLeft: alignLeft ? "0" : "20px",
-  }),
+  founderSectionWrapper: {
+    margin: "10px 0",
+  },
   founderName: {
-    color: theme.palette.primary.light,
+    color: theme.palette.secondary.light,
   },
   textTitle: {
-    color: theme.palette.primary.light,
+    color: theme.palette.secondary.light,
+  },
+  mainText: {
+    color: theme.palette.secondary.dark,
   },
 }));
 
 function Card(props: CardPropsType) {
-  const { alignLeft, founder, title, children } = props;
-  const classes = useStyles(props);
-
-  const founderSection = (
-    <Grid
-      container
-      direction="column"
-      xs={4}
-      className={classes.founderSectionWrapper}
-    >
-      <h2 className={classes.founderName}>{founder.name}</h2>
-      <div>{founder.blurb}</div>
-    </Grid>
-  );
-
-  const textSection = (
-    <Grid xs={7} direction="column">
-      <h2 className={classes.textTitle}>{title}</h2>
-      {children}
-    </Grid>
-  );
+  const { children, size } = props;
+  const classes = useStyles();
 
   return (
-    <div className={classes.card}>
-      <Grid container direction="row">
-        {alignLeft ? (
-          <>
-            {founderSection} {textSection}
-          </>
-        ) : (
-          <>
-            {textSection} {founderSection}
-          </>
-        )}
-      </Grid>
-    </div>
+    <Grid
+      item
+      container
+      direction="column"
+      xs={size}
+      className={classes.card + " " + classes.mainText}
+    >
+      {children}
+    </Grid>
   );
 }
 
