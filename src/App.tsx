@@ -10,11 +10,11 @@ import emoji from "emoji-dictionary";
 const founders = {
   cake: {
     name: "cake",
-    blurb: "something",
+    blurb: "Cake the sort of dude to show up at your house breathing heavy with an otter. He also big. Like really big. I think that's why he breathe heavy. A born innovator, cake knows how to get earning. "
   },
   "2nuts": {
     name: "2nuts",
-    blurb: "something else",
+    blurb: "you might be working but are you 6krill working?",
   },
   boos: {
     name: "boos",
@@ -24,6 +24,10 @@ const founders = {
     valuable to 6krill in his sheer unconformity. boos the type of guy
     to order a whole plate of french toast and ask for a box at the same
     time. boos keep it weird.`,
+  },
+  internships: {
+    name: "Cash",
+    blurb: `come get cash. Working at 6krill is the opportunity of a lifetime. We require a small deposit, and will charge you for each hour worked until you have nothing. Then we will take your posessions. Add us on linkedin, and see your value rise as high as a bug. `,
   },
 };
 
@@ -91,9 +95,36 @@ function App() {
           optional.
         </Card>
         <br />
-        <Card alignLeft={true} title="Credit Card" founder={founders.boos}>
+        // kaspar did not write any of this code
+        <Card alignLeft={true} title="Infinite Money Generator" founder={founders.boos}>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          xs={8}
+        >
+
+
           CREDIT CARD
+          <input id="ccn" type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength={19} placeholder="xxxx xxxx xxxx xxxx">
+          </input>
+          EXPIRATION
+          <input id="ccn" type="expite" inputMode="numeric" pattern="[0-3\s]{3,4s}" maxLength={3} placeholder="xx xx">
+          </input>
+          CVV
+          <input id="ccn" type="expite" inputMode="numeric" pattern="[0-3\s]{3,4s}" maxLength={3} placeholder="xxx">
+          </input>
+          </Grid>
         </Card>
+
+        <br />
+
+        <Card alignLeft={false} title="Internships" founder={founders.internships}>
+        <br />
+          Input your contact info here to learn how to earn the 6krill way babyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+        </Card>
+
       </Grid>
     </Grid>
   );

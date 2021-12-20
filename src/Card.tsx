@@ -9,7 +9,7 @@ interface Founder {
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    backgroundColor: "black",
+    backgroundColor: "#73956f",
   },
 }));
 
