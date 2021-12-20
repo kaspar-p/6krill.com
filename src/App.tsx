@@ -104,9 +104,9 @@ function App() {
           alignItems="center"
           xs={8}
         >
+        <p>Here at 6krill, we want your credit card informations and we will do anything to get it. We will also take sentimental items and experiences from you (and NOT give them back).</p>
 
-
-          CREDIT CARD
+          <p>CREDIT CARD</p>
           <input id="ccn" type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength={19} placeholder="xxxx xxxx xxxx xxxx">
           </input>
           EXPIRATION
@@ -122,7 +122,7 @@ function App() {
 
         <Card alignLeft={false} title="Internships" founder={founders.internships}>
         <br />
-          Input your contact info here to learn how to earn the 6krill way babyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+          Input your contact info here to learn how to earn the 6krill way. We have synergy. Also, we don't owe you anything, so that is. Spyware. We have darkmode and light mode at the same time and they alternate very fast. Please stay on this website for a very long time. And also say hello to the papers because we are internationally known for our skills. I'm feeling generous, so no lunch breaks. 
         </Card>
 
       </Grid>
