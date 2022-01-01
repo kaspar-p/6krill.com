@@ -8,5 +8,5 @@ Contact the team at 6krill@gmail.com for any inquiries.
 <br />
 <br />
 <br />
-
-Disclaimer: this website is a joke. It was created with a few friends ([@lukeask](https://www.github.com/lukeask) and [@harvardprogomar](https://www.github.com/harvardprogomar)) and is not meant to be taken seriously.
+To run, use `npm run`
+Disclaimer: this website is a joke. It was created with a few friends ([@lukeask](https://www.github.com/lukeask) and [@harvardprogomar](https://www.github.com/harvardprogomar)) and is meant to be taken very seriously.
