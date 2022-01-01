@@ -53,7 +53,7 @@ const founders = {
   "2nuts": {
     name: `${nutEmoji}2nuts${nutEmoji}`,
     blurb:
-      "Ain't shit get past me. Other interests: pulling strings and breathing down necks. ",
+      "Ain't shit get past me. Other interests:  ",
   },
   boos: {
     name: `${trainEmoji}boos${trainEmoji}`,
@@ -62,7 +62,7 @@ const founders = {
       title, boos got ideas. As a Dust II hater, a young producer, and
       gamer on the sticks, boos really stays odd around the hose. boos is
       valuable to 6krill in his raw, unapologetic conformity. boos likes french toast but
-      won't eat it all at once. boos keep it weird.`,
+      won't eat it all at once. boos keep it weird. Other interests: pulling strings and breathing down necks.`,
   },
   internships: {
     name: "Cash",
