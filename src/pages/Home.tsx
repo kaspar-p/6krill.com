@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { Grid, Theme, useMediaQuery } from "@mui/material";
 import emoji from "emoji-dictionary";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
 
 import Card from "../components/Card";
 import Section from "../components/Section";
 import ColorFinding from "../components/ColorFinding";
 import { makeStyles } from "@mui/styles";
 import SnorkelPic from "../images/images.jpeg";
+
+<Link to="/">Home</Link>
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeWrapper: {
@@ -38,9 +45,9 @@ const trainEmoji = emoji.getUnicode("train");
 const founders = {
   cake: {
     name: `${cakeEmoji}cake${cakeEmoji}`,
-    blurb: `cake is big. Like big big. cake is astonishingly massive. At this point, 
-    it's a hygiene issue. Other interests: snorkling and babes. As the worst member 
-    of 6krill, he gets hit. He may not admit it, but he enjoys being hit. little piggie. 
+    blurb: `cake is big. Like big big. cake is astonishingly massive. At this point,
+    it's a hygiene issue. Other interests: snorkling and babes. As the worst member
+    of 6krill, he gets hit. He may not admit it, but he enjoys being hit. little piggie.
     Other interests: snorkling. `,
   },
   "2nuts": {
@@ -50,11 +57,11 @@ const founders = {
   },
   boos: {
     name: `${trainEmoji}boos${trainEmoji}`,
-    blurb: `Meet boos. boos is our biggest hitter. Other interests: drinking and hitting. 
+    blurb: `Meet boos. boos is our biggest hitter. Other interests: drinking and hitting.
       The interns are his favorite. to hit. As the inventor of the 6krill
       title, boos got ideas. As a Dust II hater, a young producer, and
       gamer on the sticks, boos really stays odd around the hose. boos is
-      valuable to 6krill in his raw, unapologetic conformity. boos likes french toast but 
+      valuable to 6krill in his raw, unapologetic conformity. boos likes french toast but
       won't eat it all at once. boos keep it weird.`,
   },
   internships: {
@@ -187,7 +194,7 @@ function Home() {
           spacing={spacingSize}
         >
           <Card size={smallSize}>
-            <h2>Meet {founders.boos.name}</h2>
+            <h2>    <a href="https://surviv.io/stats/6krillcake" color = "#ffffff"> Meet {founders.boos.name} </a>    </h2>
             <p>{founders.boos.blurb}</p>
           </Card>
           <Card size={largeSize}>
