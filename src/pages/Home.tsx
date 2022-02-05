@@ -144,7 +144,9 @@ function Home() {
           spacing={spacingSize}
         >
           <Card size={smallSize}>
-            <h2>Meet {founders.cake.name}</h2>
+            <h2>
+              <a href="https://surviv.io/stats/6krillcake" color="#ffffff">Meet {founders.cake.name}</a>
+            </h2>
             <p>{founders.cake.blurb}</p>
           </Card>
           <Card size={largeSize}>
@@ -180,7 +182,9 @@ function Home() {
             </p>
           </Card>
           <Card size={smallSize}>
-            <h2>Meet {founders["2nuts"].name}</h2>
+            <h2>
+              <a href="https://surviv.io/stats/6krill2nuts" color="#ffffff">Meet {founders["2nuts"].name}</a>
+            </h2>
             <p>{founders["2nuts"].blurb}</p>
           </Card>
         </Grid>
@@ -194,7 +198,9 @@ function Home() {
           spacing={spacingSize}
         >
           <Card size={smallSize}>
-            <h2>    <a href="https://surviv.io/stats/6krillcake" color = "#ffffff"> Meet {founders.boos.name} </a>    </h2>
+            <h2>
+              <a href="https://surviv.io/stats/6krillpujers" color="#ffffff">Meet {founders.boos.name}</a>
+            </h2>
             <p>{founders.boos.blurb}</p>
           </Card>
           <Card size={largeSize}>
