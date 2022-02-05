@@ -4,5 +4,6 @@ Your chance to meet the 3 of us, and we are 2 good. It's 6krill with our launch 
 
 Contact the team at 6krill@gmail.com for any inquiries.
 
-To run, use `npm run`
+To run, use `npm run start`.
+
 Disclaimer: this website is a joke. It was created with a few friends ([@lukeask](https://www.github.com/lukeask) and [@harvardprogomar](https://www.github.com/harvardprogomar)) and is meant to be taken very seriously.
